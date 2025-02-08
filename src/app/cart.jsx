@@ -1,13 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet, StatusBar } from "react-native";
-
-import Header from "../components/Header";
+import { View, Text, StyleSheet } from "react-native";
 
 export default function Cart() {
   return (
     <View>
-      <StatusBar backgroundColor={"#fafafa"} barStyle={"dark-content"} />
-      <Header title={"Carrinho"} />
       <Text>Carrinho de copras</Text>
     </View>
   )

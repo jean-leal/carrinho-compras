@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View } from "react-native";
 import { StyleSheet, FlatList, StatusBar } from "react-native";
 
 import Header from "../components/Header";
 import ItemList from "../components/ItemList";
-import CartProvider from "../contexts/CartContext";
+import {CartContext} from "../contexts/CartContext";
 
 export default function Index() {
-  const [cart, setCart] = useState(['a'])
+  const { cart, addItemCart } = useContext(CartContext);
+
   const [produtcs, setProducts] = useState([{
     id: 1,
     name: 'Coca cola',
@@ -34,19 +35,21 @@ export default function Index() {
     price: 2.20
   }])
 
+  function handleAddCart(item){
+    addItemCart(item)
+  }
+
   return (
-    <View>
-      <CartProvider>
+    <View>      
         <StatusBar backgroundColor={"#fafafa"} barStyle={"dark-content"} />
         <Header title={"Lista de Produtos"} cart={cart} />
         <View style={styles.container}>
         </View>
         <FlatList
           data={produtcs}
-          renderItem={(item) => <ItemList data={item} />}
+          renderItem={({item}) => <ItemList data={item} addToCart={() => handleAddCart(item)} />}
           keyExtractor={item => String(item.id)}
-        />
-      </CartProvider>
+        />    
     </View>
   )
 }
