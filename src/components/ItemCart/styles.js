@@ -12,11 +12,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center'
   },
+  item: {
+
+  },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 22
   },
   price: {
-    fontSize: 16,
+    fontSize: 18,
+
   }
 })

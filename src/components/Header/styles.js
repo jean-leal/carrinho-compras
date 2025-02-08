@@ -15,5 +15,20 @@ export const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 22, 
     fontWeight: 'bold',
+  },
+  notification: {
+    backgroundColor: "red", 
+    alignItems: 'center', 
+    alignContent: 'center',
+    width: 20, 
+    height: 20,
+    textAlign: 'center', 
+    borderRadius: 12, 
+    color: '#fff',
+    fontSize: 12, 
+    position: 'absolute', 
+    zIndex: 99, 
+    bottom: -2,
+    left: -4
   }
 })
